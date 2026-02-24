@@ -2,7 +2,6 @@
 
 #define MAX_PROCESSES 10
 
-// Function to find waiting time (Preemptive SJF / SRTF)
 void findWaitingTime(int processes[], int n, int bt[], int wt[]) {
     int remaining_bt[MAX_PROCESSES];
     
@@ -46,13 +45,11 @@ void findWaitingTime(int processes[], int n, int bt[], int wt[]) {
     }
 }
 
-// Function to find turnaround time
 void findTurnaroundTime(int processes[], int n, int bt[], int wt[], int tat[]) {
     for (int i = 0; i < n; i++)
         tat[i] = bt[i] + wt[i];
 }
 
-// Function to find average time
 void findAverageTime(int processes[], int n, int bt[]) {
     int wt[MAX_PROCESSES], tat[MAX_PROCESSES];
     int total_wt = 0, total_tat = 0;
@@ -76,7 +73,6 @@ void findAverageTime(int processes[], int n, int bt[]) {
            (float)total_tat / n);
 }
 
-// Main function
 int main() {
     int processes[] = {1, 2, 3, 4};
     int n = 4;
